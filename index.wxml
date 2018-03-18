@@ -1,0 +1,23 @@
+<import  src="../../template/tooltip/index.wxml"  />
+   <!-- <block wx:if="{{tooltip.show}}"> 
+       <template  data="{{...tooltip}}" is="tooltip" /> 
+     </block>  -->
+    <view class="container">
+    <view class="container-rows">
+     <!-- <block wx:for="{{list}}" wx:key="url" wx:for-item="item">  -->
+    <block wx:for="{{list}}"> 
+    <view bindtap="linkTo" class="container-nav" data-index="{{index}}">
+     <image class="container-nav-img" src="{{item.icon}}"></image> 
+    <!-- <image class="container-nav-img" src="../../images/drupal.png"></image> -->
+     <view class="container-nav-title">{{item.title}}</view> 
+     <!-- <view class="container-nav-title">群聊逗比表情</view> -->
+     <view class="container-nav-tip">{{item.tip}}</view> 
+    <!-- <view class="container-nav-tip">想要的表情包，这里都有～</view> -->
+    </view>
+     </block> 
+    </view>
+    <block wx:if="{{link}}"><view class="container-footer">
+    <navigator class="container-text" openType="navigate" url="/pages/link/index">联系我们</navigator>
+    </view>
+  </block>
+</view>
